@@ -1,0 +1,8 @@
+Any settings that should be put into the UI ought to be included here:
+
+-A place to manage locations: allows people to add and delete locations where they are thinking of setting up a system
+	*On this note, one should be able to chose from an existing history when changing budget values
+	!This sort of thing ought to be implemented in the my_sys activity, not in the settings.
+
+-An about page
+

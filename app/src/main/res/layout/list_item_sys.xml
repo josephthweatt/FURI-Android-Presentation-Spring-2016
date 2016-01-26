@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- used in my_sys and sys_ranking to store the titles and info of the systems -->
+<TextView
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/sys_text_data"
+android:paddingLeft="1dp"
+android:textColor="@drawable/font_color_selector"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/object_selector"/>

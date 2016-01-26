@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">FURI</string>
+    <string name="find_sys">Find System</string>
+    <string name="sys_results">System Results</string>
+    <string name="my_sys">My Systems</string>
+    <string name="sys_ranking">System Rankings</string>
+    <string name="email_hint">export data</string>
+    <string name="action_settings">Settings</string>
+</resources>

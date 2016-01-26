@@ -1,0 +1,5 @@
+
+public class GrabAPIInfo {
+	public final String API_KEY = "a1b64ccdd7272447";
+	
+}

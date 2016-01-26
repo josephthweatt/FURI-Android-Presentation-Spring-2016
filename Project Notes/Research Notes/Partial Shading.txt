@@ -1,0 +1,21 @@
+Partial Shading - the effect of an object obstructing energy absorption by a pv system
+
+A brief recap of electrical measurements
+Volt - unit of force (as in F = ma)
+	*force of electricity
+Amps - current (x electrons pass through the curcit in y amount of seconds)
+	*amount of electricity
+Watts - energy per time unit
+	*equal to amount x force, or W = V * AMP
+
+From these equations ^^, it stands that a pv system would prefer AMOUNT of electricity to force of electricity, because it is storing it and not using it. Therefore, pv systems aim to optimize AMPS.
+
+When a panel is obstructed, it is possible that the inverter will ignore such a panel to avoid lowering the system's current flow. However, an inverter may accept the shaded panel(s) if they happened to be generating more Amps than the completely unobstructed panel.
+
+SolarEdge proposes that every panel be treated as its own independant system, so that no panel is ignored just because another panel within its system is underperforming. The result is a 5-20% energy gain from the system.
+
+The article "Modeling and simulation of PV... based on a 2-diode model"  shows that the way solar modules are networked can affect which panels are used by the inverter. More connections brings about a larger chance that the system will harness more amps
+
+
+http://www.solaredge.us/articles/pv-system-shading
+http://www.sciencedirect.com.ezproxy1.lib.asu.edu/science/article/pii/S1569190X11000608

@@ -1,0 +1,7 @@
+Creating the UI will require research on how customers will percieve an app given varying factors. To make the app's appearance, I will need to focus on the following factors:
+
+-Color scheme
+-StoryBoard
+-Visual tatics within each frame
+-transitions (part of visual tactics)
+-the additional settings

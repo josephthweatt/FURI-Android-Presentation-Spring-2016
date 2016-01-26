@@ -1,0 +1,6 @@
+*When the app returns a result, the presentation needs to look picturesque, but its data needs to look extractable.
+	How do I do this?
+
+*The application could make movements between input and output. By that I mean the application slides to different windows once it recieves an input. We coould have it go down to show progress along the storyboard, and up to show regression. 
+
+*What should be done about the loading screen, if anything?

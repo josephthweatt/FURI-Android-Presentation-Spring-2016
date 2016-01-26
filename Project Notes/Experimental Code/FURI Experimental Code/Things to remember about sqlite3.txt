@@ -1,0 +1,4 @@
+Things to remember
+-when opening a .db file, the exension must be included in the '.open' command, otherwise, you create a generic file
+-'select * from' will print the db for you
+-to insert a string (char[]) into a db, you must add '' around the String, or it will be taken as a command

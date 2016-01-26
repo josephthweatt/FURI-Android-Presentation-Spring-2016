@@ -1,0 +1,42 @@
+
+public class BestCaseOutput {
+	static short day;
+	static float[] sunriseSchedule, sunsetSchedule;
+	
+	//variables used for sunrise/sunset
+	static float hour;
+	static double locationLatitude;
+	static double declination;
+	
+	public static void main(String[] args) {
+		day = 1;
+		sunriseSchedule = sunsetSchedule = new float[365];
+		setLocationLatitude(22);
+		//this here gets the schedules for sunrises and sunsets
+		for (int i = 0; i < 365; i++, day++) {
+			hour = (float) Math.toDegrees(Math.acos(
+					(-Math.tan(Math.toRadians(locationLatitude)) * Math.tan(Math.toRadians(getDeclinationAngle())))));
+			if (hour < 0) { 
+				sunriseSchedule[i] = hour;
+				sunsetSchedule[i] = -hour;
+			} else {
+				sunsetSchedule[i] = hour;
+				sunriseSchedule[i] = -hour;
+			}
+			System.out.println(sunriseSchedule[i] + " : " + sunsetSchedule[i]);
+		}
+		
+	}
+	
+	//sets location latitude 
+	public static void setLocationLatitude(double lat) {
+		locationLatitude = lat;
+	}
+	
+	//returns declination angle for a given day
+	public static double getDeclinationAngle() {
+		return Math.toDegrees(Math.asin(
+				Math.sin(Math.toRadians(23.45)) * Math.sin(Math.toRadians(((double)360/365) * (day - 81))))); 
+	}
+
+}

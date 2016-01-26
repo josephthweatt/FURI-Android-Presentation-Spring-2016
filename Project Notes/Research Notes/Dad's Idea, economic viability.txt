@@ -1,0 +1,11 @@
+Dad just gave me an idea about what to include on the PV system output. He mentioned that I should include whether or not the cost of the solar panel will be less than the cost of traditional grid power. The factors needed to calculate the cost effectiveness include, but are not limited to:
+	*the warranty
+	*the expected kw/h for the system for the time it is expected to function (product lifetime)
+	*the grid's avg kw/h
+
+The master equation for this would be: (price of solar kw/h) - (price of power company kw/h)
+A negative value would indicate that money is lost by switching to solar.
+
+This information ought to be presented in the results under the category of "price". 
+
+This factor ought to be considered when evaluating what the "best system" is for the user. However, the program must consider the fact that users may not care about cost so much as independance from the grid. It is even possible that some users might be so far from the grid that the power company costs should not be factored in. My program must be able to discern the motives of the user to present a more appealing plan.

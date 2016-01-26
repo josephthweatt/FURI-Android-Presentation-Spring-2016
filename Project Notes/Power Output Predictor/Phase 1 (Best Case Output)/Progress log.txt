@@ -1,0 +1,8 @@
+1-21-16
+-need to tweak equation to get proper sunrise/sunset schedules. Must do this before continuing to the rest of the equations. For future reference, the url of the main resource is:
+	http://www.pveducation.org/pvcdrom/properties-of-sunlight/calculation-of-solar-insolation
+-oh, and I see that there is a more reliable equation for sunrise/set on that same page. I'll do it tomorrow, I need to sleep.
+
+-woke up, think i figured out the sunrise/set equation. Use this for declination:
+	http://www.itacanet.org/the-sun-as-a-source-of-energy/part-3-calculating-solar-angles/#3.1.-Declination-Angle
+-Also, divide arccos by 15, make every trig function use degrees, and add the result by one (to account for 12:00 am in the day)
