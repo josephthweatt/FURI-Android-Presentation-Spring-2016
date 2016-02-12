@@ -1,8 +1,0 @@
-What I will need to do for the next couple weeks:
--findpower output of one solar panel
--prove the concept of finding solar panel output
--try to factor in weather, orientation, etc
--check NREL (national renewable energy lab)
-
-
--prototype algorithm should exist by the end of February
