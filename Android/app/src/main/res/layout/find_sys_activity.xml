@@ -49,8 +49,8 @@
                 android:background="@drawable/holocolors_textfield_activated_holo_light"
                 android:cursorVisible="true"
                 android:textCursorDrawable="@null"
-                android:inputType="number"
-                android:hint="Enter Zipcode">
+                android:inputType="textCapSentences"
+                android:hint="Enter Address">
                 <requestFocus/>
             </EditText>
 
@@ -67,6 +67,21 @@
                 android:textCursorDrawable="@null"
                 android:inputType="number"
                 android:hint="Enter Budget">
+                <requestFocus/>
+            </EditText>
+            <EditText
+                android:id="@+id/size_in_KW_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/white"
+                android:background="@drawable/holocolors_textfield_activated_holo_light"
+                android:cursorVisible="true"
+                android:textCursorDrawable="@null"
+                android:inputType="number"
+                android:hint="Enter System Size in Kilowatts">
                 <requestFocus/>
             </EditText>
             <EditText

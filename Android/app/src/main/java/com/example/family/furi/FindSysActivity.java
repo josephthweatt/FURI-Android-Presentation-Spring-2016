@@ -10,11 +10,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.support.v7.widget.Toolbar;
+import android.widget.EditText;
+
+import com.example.family.furi.ProductObjects.Goal;
+import com.example.family.furi.SystemCreation.SystemManager;
 
 /**
  * Created by Family on 12/27/2015.
  */
 public class FindSysActivity extends AppCompatActivity {
+    public SystemCreator creation;
+
+    private EditText address;
+    private EditText budget;
+    private EditText sizeInKW;
+    private EditText maxSpace;
+
     private Button editSys;
     private Button getSys;
     private Button getInfo;
@@ -26,6 +37,11 @@ public class FindSysActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        address = (EditText) findViewById(R.id.location_entry);
+        budget = (EditText) findViewById(R.id.budget_entry);
+        sizeInKW = (EditText) findViewById(R.id.size_in_KW_entry);
+        maxSpace = (EditText) findViewById(R.id.available_space_entry);
 
         //transition to my_sys
         editSys = (Button) findViewById(R.id.edit_prev_sys);
@@ -41,6 +57,12 @@ public class FindSysActivity extends AppCompatActivity {
         getSys.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                creation = new SystemCreator(getApplicationContext(),
+                        address.getText().toString(),
+                        Double.parseDouble(budget.getText().toString()),
+                        Double.parseDouble(sizeInKW.getText().toString()),
+                        Double.parseDouble(maxSpace.getText().toString())
+                );
                 Intent newIntent = new Intent(FindSysActivity.this, ResultsActivity.class);
                 startActivity(newIntent);
             }

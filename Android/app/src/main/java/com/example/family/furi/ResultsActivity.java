@@ -1,29 +1,23 @@
 package com.example.family.furi;
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Family on 12/28/2015.
  */
 public class ResultsActivity extends AppCompatActivity {
-
+    public SystemCreator creator;
     TextView bestOption;
 
     private Button modelRanks;
@@ -37,8 +31,10 @@ public class ResultsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        setBestOption();
+        creator = new SystemCreator();
+        if (creator.newGoal) {
+            creator.execute();
+        }
 
         //transitions to the model rankings
         modelRanks = (Button) findViewById(R.id.ranking_button);
@@ -72,6 +68,18 @@ public class ResultsActivity extends AppCompatActivity {
                 toast.show();
             }
         });
+
+        if (creator.newGoal) {
+            while (!creator.flag) {
+                // do nothing until flag is true
+                try {
+                    Thread.sleep(350);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        setBestOption();
     }
 
     @Override
@@ -95,11 +103,17 @@ public class ResultsActivity extends AppCompatActivity {
 
     //sets the data for the best found option (dummy data currently used)
     public void setBestOption() {
-        String model = "A\n";
-        String power = "B\n";
-        String price = "C";
+        if (creator.getBestSystem() != null) {
+            String model = "\nPanel: " + creator.getBestSystem().panel.name + "\n\n";
+            String power = "Size in KW: " + (double) (creator.getBestSystem().panel.systemCap
+                    * creator.getBestSystem().panel.panelCount) / 1000
+                    + "\n\nYearly KWH: " + creator.getBestSystem().annualKWhPerPanel + "\n\n";
+            String price = "Total cost: " + creator.getBestSystem().cost + "\n";
 
-        bestOption = (TextView) findViewById(R.id.best_option_data);
-        bestOption.setText(model + power + price);
+            bestOption = (TextView) findViewById(R.id.best_option_data);
+            bestOption.setText(model + power + price);
+        } else {
+            bestOption.setText("No systems were found under\nthe given constraints");
+        }
     }
 }
